@@ -1,9 +1,10 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-// const PORT = 2023
 
+// place body-parser before your CRUD handlers!
 
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // app.get('/', (req, res) => {
 //   res.send('Anaweza Bwana')
