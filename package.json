@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +15,16 @@
     "express": "^4.18.2",
     "node-fetch": "^3.2.6"
   },
-  "description": "",
   "devDependencies": {
     "nodemon": "^2.0.22"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AfroGit/Simplicity-CRUD-App.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AfroGit/Simplicity-CRUD-App/issues"
+  },
+  "homepage": "https://github.com/AfroGit/Simplicity-CRUD-App#readme",
+  "description": ""
 }
