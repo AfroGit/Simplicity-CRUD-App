@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const app = express()
 
 const MongoClient = require('mongodb').MongoClient
-const connectionString = "mongodb+srv://KujengA4222:FrY5rpjCbwxXNtDh@cluster0.lhyk1vq.mongodb.net/?retryWrites=true&w=majority"
+const connectionString = "mongodb+srv://KujengA4222:CVIbkatM0ACWn7nv@cluster0.lhyk1vq.mongodb.net/?retryWrites=true&w=majority"
 
 
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
