@@ -22,9 +22,10 @@ MongoClient.connect(connectionString,
                quotesCollection.find().toArray()
                   .then(results => {
               console.log(results)
+        res.render('index.ejs', { quotes: results })
     })
                
-          res.render('index.ejs', {})
+          // res.render('index.ejs', { quotes: results })
       
       // res.sendFile(__dirname + '/index.html') deprecated coz i now use res.render
 })
