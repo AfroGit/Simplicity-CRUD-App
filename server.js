@@ -13,6 +13,7 @@ MongoClient.connect(connectionString,
   .then(client => {
     console.log('Connected to Database')
     const db = client.db('star-wars-quotes')
+    const quotesCollection = db.collection('quotes')
 
     app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -21,7 +22,17 @@ MongoClient.connect(connectionString,
 })
 
     app.post('/quotes', (req, res) => {
-  console.log(req.body)
+      quotesCollection
+            .insertOne(req.body)
+            .then(result => {
+              res.redirect('/')
+             console.log(result)
+})
+       .catch(error => console.error(error)) 
+})
+
+      app.listen(2023, function () {
+  console.log('listening on server 2023')
 })
 
   })
@@ -38,9 +49,9 @@ MongoClient.connect(connectionString,
 //   res.sendFile(__dirname + '/index.html')
 // })
 
-app.post('/quotes', (req, res) => {
-  console.log(req.body)
-})
+// app.post('/quotes', (req, res) => {
+//   console.log(req.body)
+// })
 
 
 
@@ -70,9 +81,9 @@ app.post('/quotes', (req, res) => {
 
 
 
-app.listen(2023, function () {
-  console.log('listening on server 2023')
-})
+// app.listen(2023, function () {
+//   console.log('listening on server 2023')
+// })
 
 
 console.log('May Node be with you')
