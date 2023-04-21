@@ -14,7 +14,7 @@ MongoClient.connect(connectionString,
     console.log('Connected to Database')
     const db = client.db('star-wars-quotes');
     const quotesCollection = db.collection('quotes');
-    app.set('view engine', 'ejs')
+     app.set('view engine', 'ejs');//sets view engine to ejs & tells Express we’re using EJS as the template engine.
 
     app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -23,10 +23,10 @@ MongoClient.connect(connectionString,
                   .then(results => {
               console.log(results)
     })
-               // console.log(cursor)
-  
+               
+          res.render('index.ejs', {})
       
-      res.sendFile(__dirname + '/index.html')
+      // res.sendFile(__dirname + '/index.html') deprecated coz i now use res.render
 })
 
     app.post('/quotes', (req, res) => {
