@@ -17,6 +17,7 @@ MongoClient.connect(connectionString,
      app.set('view engine', 'ejs');//sets view engine to ejs & tells Express we’re using EJS as the template engine.
 
     app.use(bodyParser.urlencoded({ extended: true }))
+    app.use(express.static('public'))
 
     app.get('/', (req, res) => {
                quotesCollection.find().toArray()
