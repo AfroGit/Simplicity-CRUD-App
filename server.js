@@ -18,6 +18,7 @@ MongoClient.connect(connectionString,
 
     app.use(bodyParser.urlencoded({ extended: true }))
     app.use(express.static('public'))
+    app.use(bodyParser.json())
 
     app.get('/', (req, res) => {
                quotesCollection.find().toArray()
@@ -41,6 +42,10 @@ MongoClient.connect(connectionString,
        .catch(error => console.error(error)) 
 })
 
+app.put('/quotes', (req, res) => {
+  console.log(req.body)
+})
+    
       app.listen(2023, function () {
   console.log('listening on server 2023')
 })
