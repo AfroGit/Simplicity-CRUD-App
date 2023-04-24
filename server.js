@@ -43,8 +43,25 @@ MongoClient.connect(connectionString,
 })
 
 app.put('/quotes', (req, res) => {
-  console.log(req.body)
+  quotesCollection.findOneAndUpdate(
+    { name: 'Hey' },
+    {
+      $set: {
+        name: req.body.name,
+        quote: req.body.quote
+      }
+    },
+    {
+      upsert: true,
+    }
+  )
+    .then(result => {
+      console.log(result)
+     })
+   .catch(error => console.error(error))
 })
+       
+  
     
       app.listen(2023, function () {
   console.log('listening on server 2023')
