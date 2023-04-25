@@ -62,6 +62,15 @@ app.put('/quotes', (req, res) => {
 })
        
   
+   app.delete('/quotes', (req, res) => {
+  quotesCollection
+    .deleteOne({ name: req.body.name })//we don’t need to hardcode it in Express anymore. We can simply use req.body.name.
+    .then(result => {
+      res.json(`Deleted Darth Vader's quote`)
+    })
+    .catch(error => console.error(error))
+})
+
     
       app.listen(2023, function () {
   console.log('listening on server 2023')
