@@ -1,6 +1,6 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const app = express()
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 
 const MongoClient = require('mongodb').MongoClient
 const connectionString = "mongodb+srv://KujengA4222:CVIbkatM0ACWn7nv@cluster0.lhyk1vq.mongodb.net/?retryWrites=true&w=majority"
@@ -62,7 +62,7 @@ app.put('/quotes', (req, res) => {
 })
        
   
-   app.delete('/quotes', (req, res) => {
+   app.delete('/quotes', (req,res) => {
   quotesCollection
     .deleteOne({ name: req.body.name })//we don’t need to hardcode it in Express anymore. We can simply use req.body.name.
     .then(result => {
