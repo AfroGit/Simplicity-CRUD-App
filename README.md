@@ -1,0 +1,1 @@
+##To start server always run npm run dev.
